@@ -6,4 +6,4 @@
 
 ---
 
-Clone from Google Code: [https://code.google.com/p/doubanlet/](https://code.google.com/p/doubanlet/)
+Cloned & Modifed from Google Code: [https://code.google.com/p/doubanlet/](https://code.google.com/p/doubanlet/)

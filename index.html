@@ -4,16 +4,16 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<style type="text/css" media="screen"> 
 		body {
-			margin:50px 0px; padding:0px; 
+			margin:50px 0px;
 			text-align:center; 
+			background-color: #444;
 		}
 		#container {
-			width:650px;
+			width:700px;
 			margin:0px auto; 
 			text-align:left; 
 			padding:15px;
-			border:1px dashed #333;
-			background-color:#eee;
+			background-color:#f5f5f5;
 		}
 		h2 { 
 			text-algin:center; 
@@ -25,19 +25,16 @@
 	<script type="text/javascript">
 		function isReady(){
 			$('name').addEvent('keydown',function(event){
-				if(event.keyCode == 13)
-		    	startgen();
+				if (event.keyCode == 13) startgen();
 		 	});
 		}
 	</script>
 </head>
 <body onload="isReady();">
 	<div id="container" >
-		<h2>豆瓣统计工具</h2>
+		<h1>doubanlet</h1>
 		<p>豆瓣用户名或地址（比如：<b>lightory</b> 或者 <b>http://www.douban.com/people/lightory/</b>）
 			<input id="name" style="border: 1px solid #cccccc; padding: 3.5px;width:300px;" onfocus="this.style.border='1px solid #14568A';" onblur="this.style.border='1px solid #CCCCCC';" type="text" /> 
-			<span></span> 
-			<span></span>
 		</p>
 		<table style="margin-bottom:10px;">
 			<tr>
@@ -55,7 +52,6 @@
 				</td>
 			</tr>
 		</table>
-		<span></span>
 		<table style="margin-bottom:10px;">
 			<tr>
 				<td>
@@ -77,7 +73,7 @@
 						<option value="4">4</option>
 						<option value="5">5</option>
 						<option value="6">6</option>
-						<option value="7">7</option>
+						<option value="7" selected="selected">7</option>
 					</select>
 				</td>
 				<td>个</td>
@@ -91,13 +87,8 @@
 			</tr>
 			<tr></tr>
 		</table>
-		<span></span>
 		<div id="selectUser"></div>
 		<div id="output"></div>
-		<div style="border-top:1px solid #333;margin-bottom:10px;"></div>
-		<span style="margin-bottom:10px;">复制输出的HTML代码</span>
-		<br/>
-		<textarea id="htmlcode" style="border: 1px solid #cccccc; overflow-y: auto; overflow-x: hidden; height: 100px; width: 350px" onclick="this.select();" onfoucs="this.select();"></textarea>
 	</div>
 </body>
 </html>

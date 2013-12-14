@@ -38,7 +38,6 @@ return chartData.join('');
 
 function startgen(){
 document.getElementById("startBtn").disabled = 'true';
-document.getElementById('htmlcode').value = '';
 var output_div = document.getElementById('output');
 if(document.getElementById('doubanlist') != null)
 	output_div.removeChild(document.getElementById('doubanlist'));
@@ -227,7 +226,6 @@ callback:function(collections){
 			doubanlist.id = 'doubanlist';
 			doubanlist.appendChild(table);
 			document.getElementById('output').appendChild(doubanlist);
-			document.getElementById('htmlcode').value = document.getElementById('output').innerHTML;
 		}
 		document.getElementById("startBtn").disabled = '';		
 		return;
