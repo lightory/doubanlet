@@ -1,86 +1,103 @@
 ﻿<html>
 <head>
+	<title>doubanlet</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
 	<style type="text/css" media="screen"> 
-body {
-	margin:50px 0px; padding:0px; 
-	text-align:center; 
-	}
-	
-#container {
-	width:650px;
-	margin:0px auto; 
-	text-align:left; 
-	padding:15px;
-	border:1px dashed #333;
-	background-color:#eee;
-	}
-	
-h2{text-algin:center;}
-
-</style> 
-
-
-<script type="text/javascript" src="js/mootools-release-1.11.js"></script>	
-<script type="text/javascript" src="http://www.douban.com/js/api.js?v=1"></script>
-<script type="text/javascript" src="js/douban_cal.js"></script>
-
-<script type="text/javascript">
-function isReady(){
-
-  $('name').addEvent('keydown',function(event){
-    if(event.keyCode == 13)
-      startgen();
-  })
-}
-</script>
+		body {
+			margin:50px 0px; padding:0px; 
+			text-align:center; 
+		}
+		#container {
+			width:650px;
+			margin:0px auto; 
+			text-align:left; 
+			padding:15px;
+			border:1px dashed #333;
+			background-color:#eee;
+		}
+		h2 { 
+			text-algin:center; 
+		}
+	</style> 
+	<script type="text/javascript" src="js/mootools-release-1.11.js"></script>	
+	<script type="text/javascript" src="http://www.douban.com/js/api.js?v=1"></script>
+	<script type="text/javascript" src="js/douban_cal.js"></script>
+	<script type="text/javascript">
+		function isReady(){
+			$('name').addEvent('keydown',function(event){
+				if(event.keyCode == 13)
+		    	startgen();
+		 	});
+		}
+	</script>
 </head>
 <body onload="isReady();">
-<div id="container" >
-	<h2>豆瓣统计工具</h2>
-	<p>豆瓣用户名或地址（比如：<b>frankel</b> 或者 <b>http://www.douban.com/people/frankel/</b>）
-	<input id="name" style="border: 1px solid #cccccc; padding: 3.5px;width:300px;" onfocus="this.style.border='1px solid #14568A';" onblur="this.style.border='1px solid #CCCCCC';" type="text" /> <span></span> <span></span>
-	</p>
-	<table style="margin-bottom:10px;">
-	<tr>
-	<td><input name="cat" value="book" id="book" checked="true" type="radio" /><label for="book">书</label></td>
-	<td><input name="cat" value="movie" id="movie" type="radio" /><label for="movie">电影</label></td>
-	<td><input name="cat" value="music" id="music" type="radio" /><label for="music">音乐</label></td>
-	</tr>
-	</table>
-	<span></span>
-	<table style="margin-bottom:10px;">
-	<tr>
-	<td><select id="year" style="width: 80px">
-	  <option value="2012">2012年</option>
-	  <option value="2011">2011年</option>
-	  <option value="2010">2010年</option>
-	  <option value="2009">2009年</option>
-	  <option value="2008">2008年</option>
-	  <option value="2007">2007年</option>
-	  <option value="alltime">所有</option></select></td>
-	<td>每行显示</td>
-	<td><select id="colNo" style="width: 50px"> <option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option></select></td>
-	<td>个</td>
-	<td></td>
-	<td><input id="startBtn" value="开始！" onclick="startgen()" type="button" /></td>
-	<td id="loading_gif" style="display:none;"><img src="images/ajax-loader.gif"/></td>
-	</tr>
-	<tr>
-	
-	</tr>
-	</table>
-	<span></span>
-	<div id="selectUser"></div>
-	<div id="output"></div>
-	<div style="border-top:1px solid #333;margin-bottom:10px;"></div>
-	<span style="margin-bottom:10px;">复制输出的HTML代码</span>
-	<br/>
-	<textarea id="htmlcode" style="border: 1px solid #cccccc; overflow-y: auto; overflow-x: hidden; height: 100px; width: 350px" onclick="this.select();" onfoucs="this.select();"></textarea>
-
-</div>
-
-
+	<div id="container" >
+		<h2>豆瓣统计工具</h2>
+		<p>豆瓣用户名或地址（比如：<b>lightory</b> 或者 <b>http://www.douban.com/people/lightory/</b>）
+			<input id="name" style="border: 1px solid #cccccc; padding: 3.5px;width:300px;" onfocus="this.style.border='1px solid #14568A';" onblur="this.style.border='1px solid #CCCCCC';" type="text" /> 
+			<span></span> 
+			<span></span>
+		</p>
+		<table style="margin-bottom:10px;">
+			<tr>
+				<td>
+					<input name="cat" value="book" id="book" checked="true" type="radio" />
+					<label for="book">书</label>
+				</td>
+				<td>
+					<input name="cat" value="movie" id="movie" type="radio" />
+					<label for="movie">电影</label>
+				</td>
+				<td>
+					<input name="cat" value="music" id="music" type="radio" />
+					<label for="music">音乐</label>
+				</td>
+			</tr>
+		</table>
+		<span></span>
+		<table style="margin-bottom:10px;">
+			<tr>
+				<td>
+					<select id="year" style="width: 80px">
+						<option value="2013">2013年</option>
+						<option value="2012">2012年</option>
+					 	<option value="2011">2011年</option>
+						<option value="2010">2010年</option>
+						<option value="2009">2009年</option>
+						<option value="2008">2008年</option>
+						<option value="2007">2007年</option>
+						<option value="alltime">所有</option>
+					</select>
+				</td>
+				<td>每行显示</td>
+				<td>
+					<select id="colNo" style="width: 50px"> 
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+					</select>
+				</td>
+				<td>个</td>
+				<td></td>
+				<td>
+					<input id="startBtn" value="开始！" onclick="startgen()" type="button" />
+				</td>
+				<td id="loading_gif" style="display:none;">
+					<img src="images/ajax-loader.gif"/>
+				</td>
+			</tr>
+			<tr></tr>
+		</table>
+		<span></span>
+		<div id="selectUser"></div>
+		<div id="output"></div>
+		<div style="border-top:1px solid #333;margin-bottom:10px;"></div>
+		<span style="margin-bottom:10px;">复制输出的HTML代码</span>
+		<br/>
+		<textarea id="htmlcode" style="border: 1px solid #cccccc; overflow-y: auto; overflow-x: hidden; height: 100px; width: 350px" onclick="this.select();" onfoucs="this.select();"></textarea>
+	</div>
 </body>
 </html>
